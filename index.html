@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portland Pursuit</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Portland Pursuit</h1>
+        <div id="score">Your Score: 0</div>
+        <div id="task-list"></div>
+        <p class="footer">
+            <!-- <a href="https://picsum.photos/" target="_blank">Images from Picsum Photos</a> -->
+            Whit's trip 2025!
+        </p>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker registration failed:', err));
+        }
+    </script>
+</body>
+</html>
