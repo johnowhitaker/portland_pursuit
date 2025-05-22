@@ -335,7 +335,7 @@ summary:hover {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .card {
     flex-direction: column;
     align-items: flex-start;
@@ -364,7 +364,7 @@ summary:hover {
     top: 16px;
     right: 16px;
   }
-}
+} */
 
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
