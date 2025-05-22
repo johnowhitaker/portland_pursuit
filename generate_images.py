@@ -27,11 +27,17 @@ prompts = [
     ("little_free_library", "A watercolor illustration of a little free library box filled with books"),
     ("feed_rue_bunny", "A watercolor illustration of a person feeding a dandelion to a cute bunny"),
     ("take_the_bus", "A watercolor illustration of a city bus with people getting on"),
+    ("small_horse_chained", "A watercolor illustration of a very small, adorable miniature horse with a chain, looking whimsical and cute"),
 ]
 
 os.makedirs("images", exist_ok=True)
 
 for filename, prompt in prompts:
+    image_path = f"images/{filename}.webp"
+    if os.path.exists(image_path):
+        print(f"Skipping {filename} - already exists")
+        continue
+    
     print(f"Generating: {filename}")
     output = replicate.run(
         "black-forest-labs/flux-schnell",
@@ -46,6 +52,6 @@ for filename, prompt in prompts:
     )
     image_url = output[0]
     img_data = requests.get(image_url).content
-    with open(f"images/{filename}.webp", "wb") as f:
+    with open(image_path, "wb") as f:
         f.write(img_data)
-    print(f"Saved images/{filename}.webp")
+    print(f"Saved {image_path}")

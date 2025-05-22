@@ -39,7 +39,8 @@ const initialTasks = [
     { id: '38', name: 'Find a Cool Rock', description: '', points: 5, category: 'Outdoors', photoURL: 'images/cool_rock.webp' },
     { id: '39', name: 'Touch the Ocean', description: '', points: 20, category: 'Outdoors', photoURL: 'images/touch_ocean.webp' },
     { id: '40', name: 'Find Something Cool for Free', description: '', points: 10, category: 'Local', photoURL: 'images/find_something_free.webp' },
-    { id: '41', name: 'Ride a Scooter', description: '', points: 10, category: 'Local', photoURL: 'images/ride_scooter.webp' }
+    { id: '41', name: 'Ride a Scooter', description: '', points: 10, category: 'Local', photoURL: 'images/ride_scooter.webp' },
+    { id: '42', name: 'Find a very small horse chained up', description: 'Discover a tiny horse that has been chained up.', points: 25, category: 'Local', photoURL: 'images/small_horse_chained.webp' }
 ];
 
 let completedTaskIds = JSON.parse(localStorage.getItem('completedTaskIds')) || [];
