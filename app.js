@@ -68,14 +68,13 @@ function renderTasks() {
             taskDiv.className = 'card';
             taskDiv.id = `task-${task.id}`;
             if (completedTaskIds.includes(task.id)) taskDiv.classList.add('completed');
-            // Add <p>${task.description}</p> if you want to show the description
             taskDiv.innerHTML = `
                 ${task.photoURL ? `<img src="${task.photoURL}" alt="${task.name}">` : ''}
                 <div class="task-info">
                     <h3>${task.name}</h3>
-                    
-                    <p>Points: ${task.points}</p>
+                    ${task.description ? `<p>${task.description}</p>` : ''}
                 </div>
+                <div class="points-badge">${task.points} pts</div>
                 <span class="checkmark">✅</span>
             `;
             taskDiv.addEventListener('click', () => toggleTask(task.id));
